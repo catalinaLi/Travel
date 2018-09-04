@@ -20,7 +20,7 @@ export default {
       swiperList: [{
         id: '001',
         imgUrl: 'https://img1.qunarzz.com/piao/fusion/1808/fd/fddc5309111a0402.jpg_750x200_e7b93551.jpg'
-      },{
+      }, {
         id: '002',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1805/e5/59fad13a64807d02.jpg_750x200_713ae984.jpg'
       }]
