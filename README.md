@@ -25,10 +25,10 @@
 ```
 
 - 移动端点击（click）事件延迟问题
-	1)使用`npm install fastclick --save`安装fastclick.js
-	2)在main.js中引入fastclick
+	1.使用`npm install fastclick --save`安装fastclick.js
+	2.在main.js中引入fastclick
 		import fastClick from 'fastclick'
-	3)在main.js使用fastclick
+	3.在main.js使用fastclick
 		fastClick.attach(document)
 
 - 初始化移动端不同手机样式不同的问题
@@ -70,6 +70,7 @@ flex布局可以参考[Flex 布局教程：语法篇](http://www.ruanyifeng.com/
 ## rem自适应布局
 
 我们可以简单的看一下这篇文章[rem自适应布局的回顾总结](https://www.cnblogs.com/doseoer/p/5621923.html)
+
 rem是根据html的font-size大小来变化,在我们这个项目中的reset.css中设置了html的font-size为50px。
 
 ## iconfont的使用
