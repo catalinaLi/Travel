@@ -18,7 +18,7 @@ export default {
   name: 'HomeHeader'
 }
 </script>
-<style lang='stylus' scoped>
+<style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   .header
     display: flex
@@ -31,6 +31,7 @@ export default {
       .back-icon
         text-align: center
         font-size: .4rem
+        padding-left: .15rem
     .header-input
       flex: 1
       height: .64rem

@@ -20,7 +20,8 @@
 - 设置<meta>固定设备比禁止双手放大
 
 ``` JavaScript
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" 
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 ```
 
 - 移动端点击（click）事件延迟问题
@@ -73,10 +74,12 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
 
 ## iconfont的使用
 关于字体图标我们可以使用阿里[iconfont官网](http://www.iconfont.cn/home/index)提供的。使用方法如下：
-1)挑选心仪的字体图标并下载
-2)将字体文件和css整合到项目中，需要注意的是如果css和字体文件位置不在一起需要修改iconfont.css中的url的字体文件的位置
-3)在代码中通过span标签使用字体图标
-``` Css
+
+1. 挑选心仪的字体图标并下载
+2. 将字体文件和css整合到项目中，需要注意的是如果css和字体文件位置不在一起需要修改iconfont.css中的url的字体文件的位置
+3. 在代码中通过span标签使用字体图标
+
+```
 <!-- &#xe632;是通过官网复制字体图标代码 -->
 <span class="iconfont">&#xe632;</span>
 ```
@@ -97,7 +100,7 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
 ## Sublime快捷键
 
 ```
-  Ctrl+Enter            	将光标移到当前行的下一行
+  Ctrl+Enter                将光标移到当前行的下一行
   Ctrl+Shift+Enter          将光标移到当前行的下一行
   Ctrl+Shift+Ente           在上一行插入新行
   Ctrl+Shift+D              复制光标所在整行，插入到下一行
