@@ -2,7 +2,7 @@
     <div>
       <div class="title">猜你喜欢</div>
       <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
           <div class="item-img-wrapper">
             <img class="item-img" :src="item.imgUrl" />
           </div>
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/80/8092254b7f5f016ea3.water.jpg_200x200_cd798d39.jpg',
-        title: '上海欢乐谷',
-        desc: '来这里寻找你所认识的上海欢乐谷'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-        title: '上海迪士尼',
-        desc: '来这里寻找你所认识的上海迪士尼'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/tuan/team2/1507/2c/83e0e0e7ae082a.jpg_200x200_6d7378b2.jpg',
-        title: '东方明珠',
-        desc: '来这里寻找你所认识的上海东方明珠'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

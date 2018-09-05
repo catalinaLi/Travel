@@ -64,6 +64,16 @@
 
 然后就可以使用了:`background: $bgColor`
 
+## Axios
+Vue.js官方不再继续维护vue-resource，并推荐大家使用 axios
+
+### Axios的安装
+使用`npm install axios --save`命令
+
+### Axios的使用
+1.首先在需要的地方使用`import axios from 'axios'`引入Axios组件
+2.在需要调用Ajax的地方使用axios.get(url).then(res)
+
 ## flex布局
 flex布局可以参考[Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
@@ -85,7 +95,7 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
 <span class="iconfont">&#xe632;</span>
 ```
 ## webpack的使用
-- 添加路径变量
+- 添加路径别名变量
     在`webpack.base.conf.js`文件中的`resolve`中的alias定义路径变量
     ```
       resolve: {
@@ -97,6 +107,19 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
         }
       }
     ```
+    
+- 前后端分离开发接口调试解决方案
+  当后端接口还未提供，我们只能使用mock数据时，我们可以使用webpack-dev-server提供的proxyTable进行设置请求转发，修改在config目录下的index.js。eg:
+  ```
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {
+            '^/api': '/static/mock/'
+        }
+      }
+    }
+  ```
 
 ## Sublime快捷键
 
