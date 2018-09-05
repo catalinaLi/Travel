@@ -1,4 +1,4 @@
-# Travel(A learning front-end Vue.js project)
+# Travel(A learning Vue.js's project)
 
 ## 前端演进过程
 
