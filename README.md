@@ -121,6 +121,14 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
     }
   ```
 
+## Vue.js插件
+
+### better-scroll
+[github地址](https://github.com/ustbhuangyi/better-scroll)
+
+### vue-awesome-swiper
+[github地址](https://github.com/surmon-china/vue-awesome-swiper)
+
 ## Sublime快捷键
 
 ```
