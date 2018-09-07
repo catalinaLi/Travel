@@ -74,6 +74,20 @@ Vue.js官方不再继续维护vue-resource，并推荐大家使用 axios
 1.首先在需要的地方使用`import axios from 'axios'`引入Axios组件
 2.在需要调用Ajax的地方使用axios.get(url).then(res)
 
+## Vuex
+在Vue.js中传参的方法对于多层嵌套的组件将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。对于这个问题，我们可以使用Vuex来解决
+
+### Vuex的安装
+使用`npm install vuex --save`命令
+
+### Vuex的使用
+```
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+```
+
 ## flex布局
 flex布局可以参考[Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
