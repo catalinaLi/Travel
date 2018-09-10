@@ -2,6 +2,11 @@
 
 因为自己并不是个合格的现在JS开发，所以在学习Vue.js的过程中有许多细小的知识点。这些知识点过于琐碎，不利于单独开篇文章记录，所以以标题的形式记录在这里。
 
+## Demo展示
+![vue-travel](http://ou3np1yz4.bkt.clouddn.com/vue-travel.png)
+或者访问
+[http://catalinali.top/Vue-Travel/](http://catalinali.top/Vue-Travel/)
+
 ## 前端演进过程
 
 关于前端开发的演进过程大家可以看这一篇文章[萌新也能懂的现代 JavaScript 开发](https://zhuanlan.zhihu.com/p/31044340)
