@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('/static/mock/city.json').then(this.handleGetCityInfoSucc)
+      axios.get('/Vue-Travel/static/mock/city.json').then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc (res) {
       res = res.data
