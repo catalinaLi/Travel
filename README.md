@@ -1,5 +1,7 @@
 # Travel(A learning Vue.js's project)
 
+因为自己并不是个合格的现在JS开发，所以在学习Vue.js的过程中有许多细小的知识点。这些知识点过于琐碎，不利于单独开篇文章记录，所以以标题的形式记录在这里。
+
 ## 前端演进过程
 
 关于前端开发的演进过程大家可以看这一篇文章[萌新也能懂的现代 JavaScript 开发](https://zhuanlan.zhihu.com/p/31044340)
@@ -7,13 +9,13 @@
 对于现代前端开发工具进行一个简单的总结：
 
 - webpack模块打包工具
-	把整个的 moment.min.js 文件下载到 HTML 中，定义了一个全局变量 moment，对于所有在 moment.min.js 之后下载的文件都可用（无论是否真的需要它）。
+  把整个的 moment.min.js 文件下载到 HTML 中，定义了一个全局变量 moment，对于所有在 moment.min.js 之后下载的文件都可用（无论是否真的需要它）。
 
 - babel用于编写下一代 JavaScript 的编译器
-	把下一代的 JavaScript 中还未在所有浏览器实现的新特性（ES6 和之后）编译成更早更兼容的 JavaScript( ES5) 。
+  把下一代的 JavaScript 中还未在所有浏览器实现的新特性（ES6 和之后）编译成更早更兼容的 JavaScript( ES5) 。
 
 - npm包管理工具
-	跟踪依赖项和版本、自动构建工具执行npm脚本包括最小化代码文件、优化图片、运行测试。
+  跟踪依赖项和版本、自动构建工具执行npm脚本包括最小化代码文件、优化图片、运行测试。
 
 ## 移动端开发注意事项
 
@@ -25,17 +27,17 @@
 ```
 
 - 移动端点击（click）事件延迟问题
-	1.使用`npm install fastclick --save`安装fastclick.js
-	2.在main.js中引入fastclick
-		import fastClick from 'fastclick'
-	3.在main.js使用fastclick
-		fastClick.attach(document)
+  1.使用`npm install fastclick --save`安装fastclick.js
+  2.在main.js中引入fastclick
+    import fastClick from 'fastclick'
+  3.在main.js使用fastclick
+    fastClick.attach(document)
 
 - 初始化移动端不同手机样式不同的问题
-	引入reset.css
+  引入reset.css
 
 - 移动端解决1像素边框在多倍屏显示成多像素问题
-	引入border.css
+  引入border.css
 
 ## Stylus
 
@@ -62,10 +64,17 @@
   @import '~styles/varibles.styl'
 ```
 
-然后就可以使用了:`background: $bgColor`
+然后就可以使用了:`background: $bgColor`。
+也可以新建一个方法来定义一段css样式，比如：
+``` Css
+ellipsis()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+```
 
 ## Axios
-Vue.js官方不再继续维护vue-resource，并推荐大家使用 axios
+对于在Vue.js中Ajax的使用，官方开始推荐大家使用Axios。
 
 ### Axios的安装
 使用`npm install axios --save`命令
@@ -97,6 +106,12 @@ Vue.use(Vuex)
 
 使用<keep-alive>会将数据保留在内存中，如果要在每次进入页面的时候获取最新的数据，需要在activated阶段获取数据，承担原来created钩子中获取数据的任务。
 
+## Vue.js异步组件加载
+当打包生成的app.js变的很大时，我们应该采取异步组件的形式，减少app.js的加载时间。在加载组件的位置改为：
+```
+component: () => import('@/pages/home/Home')
+```
+
 
 ## flex布局
 flex布局可以参考[Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
@@ -118,7 +133,7 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
 <!-- &#xe632;是通过官网复制字体图标代码 -->
 <span class="iconfont">&#xe632;</span>
 ```
-## webpack的使用
+## Webpack
 - 添加路径别名变量
     在`webpack.base.conf.js`文件中的`resolve`中的alias定义路径变量
     ```
@@ -144,6 +159,31 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
       }
     }
   ```
+- 使用ip访问本地项目
+在package.json中要运行的命令后面添加`--host 0.0.0.0`指令，如：
+```
+  "scripts": {
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js"
+  }
+```
+
+- 项目打包
+当我们要真正上线的时候，我们应该使用webpack打包代码，生成让生产环境支持的代码。
+在控制台运行命令`npm run build`然后webpack会帮我们生成**dist**目录，这个目录的代码就是我们最终要使用的代码。
+如果我们生成的代码不放在根目录下，而是一个指定的位置则需要我们修改webpack的index.js中的assetsPublicPath，如：
+```
+assetsPublicPath: '/project'
+```
+这样生成的dist文件夹就可以*更改名字project*就可以放在后端服务器的project目录中
+
+## Babel
+
+### babel-polyfill
+在一些旧的手机浏览器中可能不支持promise对象，所以我们使用这个插件来解决 
+```
+npm install babel-polyfill --save
+```
+在代码main.js中引入这个包即可`import 'babel-polyfill'`
 
 ## Vue.js插件
 
@@ -153,7 +193,9 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
 ### vue-awesome-swiper
 [github地址](https://github.com/surmon-china/vue-awesome-swiper)
 
-## Sublime快捷键
+## Sublime
+
+### Sublime快捷键
 
 ```
   Ctrl+Enter                将光标移到当前行的下一行
@@ -166,4 +208,8 @@ rem是根据html的font-size大小来变化,在我们这个项目中的reset.css
   Ctrl+PageUp               向右切换当前窗口的标签页。
 ```
 
-## Sublime snippet代码片段
+### Sublime Snippets代码片段
+Vue.js中有许多相同的模板代码，这些我们可以使用Snippets代码片段功能
+使用可以参考[Sublime Text3—Code Snippets(自定义代码片段)](https://www.cnblogs.com/easy-blue/archive/2017/09/18/7515088.html)
+
+
